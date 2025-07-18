@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffef3;
+  margin: 0;
+  padding: 0;
+}
+
+/* Kartu utama */
+.card {
+  background: linear-gradient(to right, #77a970, #3b7831);
+  color: white;
+  padding: 30px;
+  margin: 100px auto;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat hover pada kartu */
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek lingkaran cahaya mengikuti kursor */
+.cursor-light {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Garis pemisah */
+hr {
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background-color: #ffffff33;
+}
+
+/* Gaya tambahan teks */
+.note {
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.warning {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}

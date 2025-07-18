@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Status Sertifikat Digital</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Status Sertifikat Digital</h2>
+    <p><strong>Koneksi:</strong> {{ scheme }}</p>
+    <p>🔒 Cek ikon gembok di browser untuk memastikan koneksi aman.</p>
+    <hr class="divider" />
+    <p class="note">
+      Website ini memakai <strong>sertifikat self-signed</strong> (bukan dari CA resmi). 
+      Meski koneksi <code>HTTPS</code> dan terenkripsi, browser tetap menampilkan 
+      <span class="warning">“Not Secure”</span> karena sertifikat tidak bisa diverifikasi.
+    </p>
+    <button class="ripple-button" onclick="createRipple(event)">Coba Klik</button>
+  </div>
+
+  <script src="/static/cursor.js"></script>
+  <script>
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement("span");
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+      circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+      circle.classList.add("ripple");
+
+      const existingRipple = button.querySelector(".ripple");
+      if (existingRipple) existingRipple.remove();
+
+      button.appendChild(circle);
+    }
+  </script>
+</body>
+</html>
